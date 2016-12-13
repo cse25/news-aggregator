@@ -21,7 +21,14 @@ export function signinUser({ email, password }) {
       .catch(() => {
         // If request is bad:
         // -Show error to user
-        
+        dispatch(authError('Incorrect Login Info'));
       });
   }
+}
+
+export function authError(error) {
+  return {
+    type: AUTH_ERROR,
+    payload: error
+  };
 }

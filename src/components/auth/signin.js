@@ -14,6 +14,16 @@ class Signin extends Component {
     this.props.signinUser({ email, password });
   }
 
+  renderAlert() {
+    if (this.props.errorMessage) {
+      return (
+        <div className="alert alert-danger">
+          <strong>Oops!</strong> {this.props.errorMessage}
+        </div>
+      )
+    }
+  }
+
   render() {
     const { handleSubmit } = this.props;
 
@@ -31,10 +41,17 @@ class Signin extends Component {
             <Field name="password" component="input" type="text" />
           </div>
         </fieldset>
+        {this.renderAlert()}
         <button action="submit" className="btn btn-primary">Sign in</button>
       </form>
     )
   }
 }
 
-export default connect(null, actions)(form(Signin));
+function mapStateToProps(state) {
+  return {
+    errorMessage: state.auth.error
+  };
+}
+
+export default connect(mapStateToProps, actions)(form(Signin));
