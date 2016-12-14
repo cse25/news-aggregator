@@ -4,7 +4,7 @@ import authReducer from './auth_reducer';
 
 const rootReducer = combineReducers({
   // state: (state = {}) => state
-  form, //form: form
+  form: form,
   auth: authReducer
 });
 
