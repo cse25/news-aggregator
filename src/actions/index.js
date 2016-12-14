@@ -2,6 +2,7 @@ import axios from 'axios';
 import { browserHistory } from 'react-router';
 import { AUTH_USER } from './types';
 import { AUTH_ERROR } from './types';
+import { UNAUTH_USER } from './types';
 
 const ROOT_URL = 'http://localhost:3090';
 
@@ -31,4 +32,10 @@ export function authError(error) {
     type: AUTH_ERROR,
     payload: error
   };
+}
+
+export function signoutUser() {
+  return {
+    type: UNAUTH_USER,
+  }
 }

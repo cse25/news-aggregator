@@ -7,6 +7,7 @@ import reduxThunk from 'redux-thunk';
 
 import App from './components/app';
 import Signin from './components/auth/signin';
+import Signout from './components/auth/signout';
 import reducers from './reducers';
 import SampleFeature from './components/sample_feature';
 
@@ -17,6 +18,7 @@ ReactDOM.render(
     <Router history={browserHistory}>
       <Route path="/" component={App}>
         <Route path="signin" component={Signin} />
+        <Route path="signout" component={Signout} />
         <Route path="feature" component={SampleFeature} />
       </Route>
     </Router>
