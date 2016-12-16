@@ -33,7 +33,7 @@ const renderField = ({ input, label, type, meta: { touched, error, warning } }) 
 class Signup extends Component {
   handleFormSubmit( {email, password }) {
     console.log(email, password);
-    this.props.signinUser({ email, password });  // change to signupUser
+    this.props.signupUser({ email, password });
   }
 
   renderAlert() {
