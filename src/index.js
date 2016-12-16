@@ -13,11 +13,19 @@ import Welcome from './components/welcome';
 import reducers from './reducers';
 import SampleFeature from './components/sample_feature';
 import RequireAuth from './components/auth/require_auth';
+import { AUTH_USER } from './actions/types';
 
 const createStoreWithMiddleware = applyMiddleware(reduxThunk)(createStore);
+const store = createStoreWithMiddleware(reducers);
+
+const token = localStorage.getItem('token');
+
+if (token) {
+  store.dispatch({ type: AUTH_USER });
+}
 
 ReactDOM.render(
-  <Provider store={createStoreWithMiddleware(reducers)}>
+  <Provider store={store}>
     <Router history={browserHistory}>
       <Route path="/" component={App}>
         <IndexRoute component={Welcome} />
