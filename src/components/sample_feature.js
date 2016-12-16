@@ -1,5 +1,11 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-const SampleFeature = () => <div>Feature</div>;
+class SampleFeature extends Component {
+  render() {
+    return (
+      <div>Sample Feature</div>
+    )
+  }
+}
 
 export default SampleFeature;
