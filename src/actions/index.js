@@ -4,6 +4,7 @@ import { AUTH_USER } from './types';
 import { AUTH_ERROR } from './types';
 import { UNAUTH_USER } from './types';
 import { FETCH_MESSAGE } from './types';
+import { FETCH_ARTICLES } from './types';
 
 const ROOT_URL = 'http://localhost:3090';
 
@@ -70,3 +71,19 @@ export function fetchMessage() {
       });
   }
 }
+
+export function fetchArticles(source) {
+  const url = `https://newsapi.org/v1/articles?source=${source}&apiKey=${config.API_KEY}`;
+  console.log('fetching articles');
+  return function(dispatch) {
+    axios.get(url)
+      .then(response => {
+        console.log(response.data)
+        dispatch({
+          type: FETCH_ARTICLES,
+          payload: response.data.articles
+        })
+      })
+  }
+}
+
