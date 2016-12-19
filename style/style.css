@@ -1,3 +1,19 @@
 .error {
   color: red;
 }
+
+.news-source-list-item {
+  cursor: pointer;
+}
+
+.news-source-list-item:hover {
+  background-color: #eceeef;
+}
+
+.article-list {
+  margin-bottom: 6px !important;
+}
+
+.jumbotron { 
+  margin-bottom: 15px !important;
+}
