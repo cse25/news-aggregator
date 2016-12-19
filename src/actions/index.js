@@ -5,6 +5,7 @@ import { AUTH_ERROR } from './types';
 import { UNAUTH_USER } from './types';
 import { FETCH_MESSAGE } from './types';
 import { FETCH_ARTICLES } from './types';
+import { SELECT_ARTICLE } from './types';
 
 const ROOT_URL = 'http://localhost:3090';
 
@@ -87,3 +88,9 @@ export function fetchArticles(source) {
   }
 }
 
+export function selectArticle(article) {
+  return {
+    type: SELECT_ARTICLE,
+    payload: article
+  }
+}
