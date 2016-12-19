@@ -1,4 +1,5 @@
 import axios from 'axios';
+import config from '../../config'
 import { browserHistory } from 'react-router';
 import { AUTH_USER } from './types';
 import { AUTH_ERROR } from './types';
