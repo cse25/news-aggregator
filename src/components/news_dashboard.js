@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import * as actions from '../actions/index';
 import ArticleList from './article_list';
 import NewsHeader from './news_header';
 import NewsSourceList from './news_source_list';
@@ -17,4 +16,4 @@ class NewsDashboard extends Component {
   }
 }
 
-export default connect(null, actions)(NewsDashboard);
+export default NewsDashboard;
