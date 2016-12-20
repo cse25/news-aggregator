@@ -16,4 +16,6 @@
 
 .jumbotron { 
   margin-bottom: 15px !important;
+  padding: 17px !important;
+  padding-left: 20px !important;
 }
