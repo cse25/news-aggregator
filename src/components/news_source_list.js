@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { ListGroup, ListGroupItem, Panel, PanelGroup, Badge } from 'react-bootstrap';
 import { fetchArticles } from '../actions/index';
 
 class NewsSourceList extends Component {
@@ -11,31 +12,55 @@ class NewsSourceList extends Component {
   renderList(source) {
     return source.map((item) => {
       return (
-        <li
-          className="list-group-item news-source-list-item"
+        <ListGroupItem
+          className="news-source-list-item"
           onClick={() => { this.props.fetchArticles(item.id) }}
           key={item.id}>
           {item.name}
-        </li>
+        </ListGroupItem>
+      )
+    })
+  }
+
+  renderCategories() {
+    const categories = [
+      { header: 'General', data: this.props.generalSources },
+      { header: 'Technology', data: this.props.technologySources },
+      { header: 'Sports', data: this.props.sportSources },
+      { header: 'Business', data: this.props.businessSources },
+      { header: 'Science and Nature', data: this.props.scienceAndNatureSources },
+      { header: 'Gaming', data: this.props.gamingSources },
+      { header: 'Entertainment', data: this.props.entertainmentSources },
+      { header: 'Music', data: this.props.musicSources }
+    ];
+
+    return categories.map((category) => {
+      return (
+        <Panel 
+          className="news-source-list-item" 
+          collapsible header={
+          <div>
+            {category.header}
+            <span className="news-source-badge">
+              <Badge>
+                {category.data.length}
+              </Badge>
+            </span>
+          </div>}>
+          <ListGroup fill>
+            {this.renderList(category.data)}
+          </ListGroup>
+        </Panel>
       )
     })
   }
 
   render() {
     return (
-      <div>
-        <ul className="accordion list-group col-md-2">
-          <b className="list-group-item news-source-header">
-            General 
-            <span>({this.props.generalSources.length})</span>
-          </b>
-          {this.renderList(this.props.generalSources)}
-          <b className="list-group-item news-source-header">
-            Technology
-            <span>({this.props.technologySources.length})</span>
-          </b>
-          {this.renderList(this.props.technologySources)}
-        </ul>
+      <div className="col-md-3">
+        <PanelGroup>
+          {this.renderCategories()}
+        </PanelGroup>
       </div>
     )
   }
