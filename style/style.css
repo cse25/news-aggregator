@@ -1,3 +1,7 @@
+html { 
+  margin-left: calc(100vw - 100%); 
+}
+
 .error {
   color: red;
 }
@@ -22,4 +26,22 @@
 
 .news-source-header {
   background-color: #eceeef !important;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.navbar {
+  margin-bottom: 0px !important;
+}
+
+.col-md-3 {
+  padding-left: 0px !important;
+}
+
+.news-source-badge {
+  float: right;
+}
+
+.list-group-item {
+  float: right !important;
 }
