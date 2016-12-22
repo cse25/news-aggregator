@@ -4,7 +4,7 @@ const ArticleListItem = (props) => {
   const { title, description, url, urlToImage, publishedAt } = props
   
   return (
-    <div className="list-group-item article-list col-md-10">
+    <div className="list-group-item article-list col-md-9">
       <h3>
         {title}
       </h3>
