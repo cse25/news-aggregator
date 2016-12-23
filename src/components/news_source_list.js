@@ -37,6 +37,7 @@ class NewsSourceList extends Component {
     return categories.map((category) => {
       return (
         <Panel 
+          key={category.header}
           className="news-source-list-item" 
           collapsible header={
           <div>
