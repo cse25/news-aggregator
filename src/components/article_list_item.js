@@ -10,19 +10,17 @@ const ArticleListItem = (props) => {
       </h3>
       <hr></hr>
       <div>
-        <div className="row">
-          <div className="col-md-6">
-            {description}
+        <div className="col-md-6">
+          {description}
+          <div>
+            <a href={url} target="_blank">Source</a>
             <div>
-              <a href={url} target="_blank">Source</a>
-              <div>
-                <small>{publishedAt}</small>
-              </div>
+              <small>{publishedAt}</small>
             </div>
           </div>
-          <div className="col-md-6">
-            <img className="img-thumbnail img-fluid" src={urlToImage} />
-          </div>
+        </div>
+        <div className="col-md-6">
+          <img className="img-thumbnail img-fluid" src={urlToImage} />
         </div>
       </div>
     </div>       
