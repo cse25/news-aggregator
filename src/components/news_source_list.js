@@ -48,7 +48,7 @@ class NewsSourceList extends Component {
               </Badge>
             </span>
           </div>}>
-          <ListGroup fill>
+          <ListGroup>
             {this.renderList(category.data)}
           </ListGroup>
         </Panel>
