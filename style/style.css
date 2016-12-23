@@ -45,3 +45,20 @@ html {
 .list-group-item {
   float: right !important;
 }
+
+.panel-body {
+  padding: 0px !important;
+}
+
+button.list-group-item {
+  border-right: 0px;
+  border-left: 0px;
+}
+
+button.list-group-item:first-child {
+  border-top: 0px;
+}
+
+button.list-group-item:last-child {
+  border-bottom: 0px;
+}
