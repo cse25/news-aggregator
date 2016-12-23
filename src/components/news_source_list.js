@@ -26,9 +26,9 @@ class NewsSourceList extends Component {
     const categories = [
       { header: 'General', data: this.props.generalSources },
       { header: 'Technology', data: this.props.technologySources },
-      { header: 'Sports', data: this.props.sportSources },
       { header: 'Business', data: this.props.businessSources },
       { header: 'Science and Nature', data: this.props.scienceAndNatureSources },
+      { header: 'Sports', data: this.props.sportSources },
       { header: 'Gaming', data: this.props.gamingSources },
       { header: 'Entertainment', data: this.props.entertainmentSources },
       { header: 'Music', data: this.props.musicSources }
