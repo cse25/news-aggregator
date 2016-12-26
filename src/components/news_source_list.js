@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { Link } from 'react-router';
 import { ListGroup, ListGroupItem, Panel, PanelGroup, Badge } from 'react-bootstrap';
 import { fetchArticles } from '../actions/index';
 
@@ -9,7 +10,7 @@ class NewsSourceList extends Component {
     this.props.fetchArticles('the-new-york-times');
   }
 
-  renderList(source) {
+  renderSources(source) {
     return source.map((item) => {
       return (
         <ListGroupItem
@@ -20,6 +21,40 @@ class NewsSourceList extends Component {
         </ListGroupItem>
       )
     })
+  }
+
+  renderFavorites() {
+    const favorites = this.props.favorites.filter((item) => {
+      return item.favorite === true;
+    })
+    
+    if (favorites.length === 0) {
+      return (
+        <div className="add-favorites-message">
+          <Link to="/favorites">
+            You do not currently have any favorites.
+            Click here to start adding some.
+          </Link>
+        </div>
+      )
+    }
+   
+    return (
+      <Panel
+        collapsible header={
+        <div>
+          Favorites
+          <span className="news-source-badge">
+            <Badge>
+              {favorites.length}
+            </Badge>
+          </span>
+        </div>}>
+        <ListGroup>
+          {this.renderSources(favorites)}
+        </ListGroup>
+      </Panel>
+    )
   }
 
   renderCategories() {
@@ -38,7 +73,6 @@ class NewsSourceList extends Component {
       return (
         <Panel 
           key={category.header}
-          className="news-source-list-item" 
           collapsible header={
           <div>
             {category.header}
@@ -49,7 +83,7 @@ class NewsSourceList extends Component {
             </span>
           </div>}>
           <ListGroup>
-            {this.renderList(category.data)}
+            {this.renderSources(category.data)}
           </ListGroup>
         </Panel>
       )
@@ -60,6 +94,7 @@ class NewsSourceList extends Component {
     return (
       <div className="col-md-3">
         <PanelGroup>
+          {this.renderFavorites()}
           {this.renderCategories()}
         </PanelGroup>
       </div>
@@ -69,7 +104,7 @@ class NewsSourceList extends Component {
 
 function mapStateToProps(state) {
   return { 
-    sources: state.sources,
+    favorites: state.favorites,
     generalSources: state.generalSources,
     technologySources: state.technologySources,
     sportSources: state.sportSources,
