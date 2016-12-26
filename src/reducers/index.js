@@ -12,6 +12,8 @@ import entertainmentSourcesReducer from './sources_entertainment_reducer';
 import scienceAndNatureSourcesReducer from './sources_science-and-nature_reducer';
 import gamingSourcesReducer from './sources_gaming_reducer';
 import musicSourcesReducer from './sources_music_reducer';
+import favorites from './sources_favorites_reducer';
+import toggleFavorite from './toggle_favorite_reducer';
 
 const rootReducer = combineReducers({
   form: form,
@@ -19,6 +21,8 @@ const rootReducer = combineReducers({
   articles: articlesReducer,
   activeArticle: activeArticle,
   sources: sourcesReducer,
+  favorites: favorites,
+  toggleFavorite: toggleFavorite,
   generalSources: generalSourcesReducer,
   technologySources: technologySourcesReducer,
   sportSources: sportSourcesReducer,
