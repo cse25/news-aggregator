@@ -12,6 +12,7 @@ import Signup from './components/auth/signup';
 import Welcome from './components/welcome';
 import reducers from './reducers';
 import NewsDashboard from './components/news_dashboard';
+import Favorites from './components/favorites';
 import RequireAuth from './components/auth/require_auth';
 import { AUTH_USER } from './actions/types';
 
@@ -33,6 +34,7 @@ ReactDOM.render(
         <Route path="signout" component={Signout} />
         <Route path="signup" component={Signup} />
         <Route path="feature" component={RequireAuth(NewsDashboard)} />
+        <Route path="favorites" component={RequireAuth(Favorites)} />
       </Route>
     </Router>
   </Provider>
