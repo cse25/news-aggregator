@@ -6,8 +6,14 @@ html {
   color: red;
 }
 
+.grey {
+  color: #eceeef !important;
+}
+
 .news-source-list-item {
   cursor: pointer;
+  border-right: 0px !important;
+  border-left: 0px !important;
 }
 
 .news-source-list-item:hover {
@@ -16,6 +22,7 @@ html {
 
 .article-list {
   margin-bottom: 6px !important;
+  float: right !important;
 }
 
 .jumbotron { 
@@ -42,18 +49,15 @@ html {
   float: right;
 }
 
-.list-group-item {
-  float: right !important;
-}
-
 .panel-body {
   padding: 0px !important;
 }
 
-button.list-group-item {
+/*button.list-group-item {
   border-right: 0px;
   border-left: 0px;
 }
+*/
 
 button.list-group-item:first-child {
   border-top: 0px;
@@ -61,4 +65,24 @@ button.list-group-item:first-child {
 
 button.list-group-item:last-child {
   border-bottom: 0px;
+}
+
+.add-favorites-message {
+  text-align: center;
+  margin-bottom: 20px !important;
+  margin-top: 25px !important;
+}
+
+.favorites-list {
+  columns: 5;
+  -webkit-columns: 5;
+  -moz-columns: 5;
+}
+
+.list-group {
+  margin-bottom: 0px !important;
+}
+
+.favorite-item {
+  padding: 3px !important;
 }
