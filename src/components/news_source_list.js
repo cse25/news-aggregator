@@ -30,12 +30,25 @@ class NewsSourceList extends Component {
     
     if (favorites.length === 0) {
       return (
-        <div className="add-favorites-message">
-          <Link to="/favorites">
-            You do not currently have any favorites.
-            Click here to start adding some.
-          </Link>
-        </div>
+        <Panel
+          collapsible header={
+          <div>
+            Favorites
+            <span className="float-right">
+              <Badge>
+                {favorites.length}
+              </Badge>
+            </span>
+          </div>}>
+          <ListGroup>
+            <div className="add-favorites-message">
+              <Link to="/favorites">
+                You do not currently have any favorites.
+                Click here to add some.
+              </Link>
+            </div>
+          </ListGroup>
+        </Panel>
       )
     }
    
