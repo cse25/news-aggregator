@@ -90,13 +90,6 @@ export function fetchArticles(source) {
   }
 }
 
-export function selectArticle(article) {
-  return {
-    type: SELECT_ARTICLE,
-    payload: article
-  }
-}
-
 export function toggleFavorite(favorite) {
   return {
     type: TOGGLE_FAVORITE,
