@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { fetchArticles, selectArticle } from '../actions/index';
 import ArticleListItem from './article_list_item';
 
 class ArticleList extends Component {
@@ -35,8 +34,4 @@ function mapStateToProps(state) {
   }
 }
 
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ fetchArticles, selectArticle }, dispatch)
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(ArticleList);
+export default connect(mapStateToProps)(ArticleList);
