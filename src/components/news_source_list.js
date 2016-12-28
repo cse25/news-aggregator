@@ -44,7 +44,7 @@ class NewsSourceList extends Component {
         collapsible header={
         <div>
           Favorites
-          <span className="news-source-badge">
+          <span className="float-right">
             <Badge>
               {favorites.length}
             </Badge>
@@ -76,7 +76,7 @@ class NewsSourceList extends Component {
           collapsible header={
           <div>
             {category.header}
-            <span className="news-source-badge">
+            <span className="float-right">
               <Badge>
                 {category.data.length}
               </Badge>
