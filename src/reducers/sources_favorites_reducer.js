@@ -1,9 +1,9 @@
 import { TOGGLE_FAVORITE } from '../actions/types';
 
 const initialState = [
-    { id: 'abc-news-au', name: 'ABC News (AU)', favorite: true },
-    { id: 'ars-technica', name: 'Ars Technica', favorite: true },
-    { id: 'associated-press', name: 'Associated Press', favorite: true },
+    { id: 'abc-news-au', name: 'ABC News (AU)', favorite: false },
+    { id: 'ars-technica', name: 'Ars Technica', favorite: false },
+    { id: 'associated-press', name: 'Associated Press', favorite: false },
     { id: 'bbc-news', name: 'BBC News', favorite: false },
     { id: 'bbc-sport', name: 'BBC Sport', favorite: false },
     { id: 'bloomberg', name: 'Bloomberg', favorite: false },
