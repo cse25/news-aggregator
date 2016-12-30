@@ -1,6 +1,6 @@
-html { 
+/*html { 
   margin-left: calc(100vw - 100%); 
-}
+}*/
 
 .error {
   color: red;
@@ -26,6 +26,7 @@ html {
 }
 
 .jumbotron { 
+  margin-top: 15px !important;
   margin-bottom: 15px !important;
   padding: 17px !important;
   padding-left: 20px !important;
@@ -60,11 +61,11 @@ html {
 */
 
 button.list-group-item:first-child {
-  border-top: 0px;
+  border-top: 1px;
 }
 
 button.list-group-item:last-child {
-  border-bottom: 0px;
+  border-bottom: 1px;
 }
 
 .add-favorites-message {
@@ -74,15 +75,31 @@ button.list-group-item:last-child {
 }
 
 .favorites-list {
-  columns: 5;
-  -webkit-columns: 5;
-  -moz-columns: 5;
+  -moz-column-width: 13em;
+  -webkit-column-width: 13em;
+  column-width: 13em;
 }
 
 .list-group {
   margin-bottom: 0px !important;
 }
 
+.favorite-item:nth-child(12n) {
+  border-bottom: 1px solid #eceeef;
+}
+
 .favorite-item {
-  padding: 3px !important;
+  padding: 7px !important;
+  border: 1px solid #eceeef;
+  cursor: pointer;
+  border-bottom: 0px;
+}
+
+.favorite-item:hover {
+  background-color: #eceeef
+}
+
+ul {
+  list-style-type: none;
+  padding: 0px;
 }
