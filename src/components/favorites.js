@@ -9,16 +9,16 @@ class Favorites extends Component {
     return this.props.favorites.map((favorite) => {
       if (!favorite.favorite) {
         return (
-          <ListGroupItem
+          <li
             onClick={() => this.props.toggleFavorite(favorite)}
             key={favorite.name}
             className="favorite-item">
             {favorite.name}
-          </ListGroupItem>
+          </li>
         )
       } else {
         return (
-          <ListGroupItem
+          <li
             onClick={() => this.props.toggleFavorite(favorite)}
             key={favorite.name}
             className="favorite-item">
@@ -26,7 +26,7 @@ class Favorites extends Component {
             <span className="float-right">
               <Glyphicon glyph="star" />
             </span>
-          </ListGroupItem>
+          </li>
         )
       }
     })
@@ -35,10 +35,10 @@ class Favorites extends Component {
   render() {
     return (
       <div>
-        Edit Favorites
-        <ListGroup className="favorites-list">
+        <b>Edit Favorites</b>
+        <ul className="favorites-list">
           {this.renderList()}
-        </ListGroup>
+        </ul>
         <Button 
           bsStyle="primary"
           className="float-right">
