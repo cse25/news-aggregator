@@ -30,6 +30,8 @@
   margin-bottom: 15px !important;
   padding: 17px !important;
   padding-left: 20px !important;
+  background-color: #f8f8f8 !important;
+  border: 1px solid #e7e7e7;
 }
 
 .news-source-header {
