@@ -1,4 +1,4 @@
-import { AUTH_USER, UNAUTH_USER, AUTH_ERROR, FETCH_MESSAGE } from '../actions/types';
+import { AUTH_USER, UNAUTH_USER, AUTH_ERROR, FETCH_MESSAGE, SAVE_EMAIL } from '../actions/types';
 
 export default function(state = {}, action) {
   switch(action.type) {
@@ -10,6 +10,8 @@ export default function(state = {}, action) {
       return { ...state, error: action.payload };
     case FETCH_MESSAGE:
       return { ...state, message: action.payload };
+    case SAVE_EMAIL:
+      localStorage.setItem('email', action.payload);
   }
 
   return state;

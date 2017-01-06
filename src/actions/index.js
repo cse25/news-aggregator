@@ -8,6 +8,7 @@ import { FETCH_MESSAGE } from './types';
 import { FETCH_ARTICLES } from './types';
 import { SELECT_ARTICLE } from './types';
 import { TOGGLE_FAVORITE } from './types';
+import { SAVE_EMAIL } from './types';
 
 const ROOT_URL = 'http://localhost:3090';
 
@@ -21,6 +22,8 @@ export function signinUser({ email, password }) {
         dispatch({ type: AUTH_USER });
         // -Save JWT token
         localStorage.setItem('token', response.data.token);
+        // console.log('response.data.email', response.data.email);
+        dispatch({ type: SAVE_EMAIL, payload: response.data.email });
         // -Redirect to route '/feature'
         browserHistory.push('/feature');
       })
@@ -38,6 +41,7 @@ export function signupUser({ email, password }) {
       .then(response => {
         dispatch({ type: AUTH_USER });
         localStorage.setItem('token', response.data.token);
+        dispatch({ type: SAVE_EMAIL, payload: response.data.email});
         browserHistory.push('/feature');
       })
       .catch(() => {
