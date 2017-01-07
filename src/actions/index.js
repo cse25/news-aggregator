@@ -103,11 +103,9 @@ export function fetchMessage() {
 
 export function fetchArticles(source) {
   const url = `https://newsapi.org/v1/articles?source=${source}&apiKey=${config.API_KEY}`;
-  console.log('fetching articles');
   return function(dispatch) {
     axios.get(url)
       .then(response => {
-        console.log(response.data)
         dispatch({
           type: FETCH_ARTICLES,
           payload: response.data.articles

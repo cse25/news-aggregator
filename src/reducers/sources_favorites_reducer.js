@@ -3,7 +3,6 @@ import { TOGGLE_FAVORITE, GET_FAVORITES } from '../actions/types';
 export default function(state = [], action) {
   switch(action.type) {
     case GET_FAVORITES:
-      console.log('get favorites action.payload', action.payload)
       return action.payload;
     case TOGGLE_FAVORITE:
       const newState = state.map((obj) => {
