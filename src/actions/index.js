@@ -43,7 +43,7 @@ export function signupUser({ email, password }) {
       .then(response => {
         dispatch({ type: AUTH_USER });
         localStorage.setItem('token', response.data.token);
-        dispatch({ type: SAVE_EMAIL, payload: response.data.email});
+        dispatch({ type: SAVE_EMAIL, payload: response.data.email});      
         // dispatch({ type: GET_FAVORITES, payload: response.data.favorites});
         browserHistory.push('/feature');
       })
