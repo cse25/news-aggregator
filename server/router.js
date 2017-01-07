@@ -11,9 +11,6 @@ module.exports = function(app) {
   })
   app.post('/signin', requireSignin, Authentication.signin);
   app.post('/signup', Authentication.signup);
-  // app.get('/', function(request, response, next) {
-  //   response.send(['hello','world']);
-  // });
   app.post('/favorites', Authentication.getFavorites);
   app.post('/favorites/save', Authentication.saveFavorites);
 }
