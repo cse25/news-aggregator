@@ -56,3 +56,18 @@ exports.getFavorites = function(request, response, next) {
   })
 }
 
+exports.saveFavorites = function(request, response, next) {
+  const email = request.body.email;
+  const favorites = request.body.favorites;
+  console.log(email, favorites);
+  User.findOneAndUpdate(
+    { email: email },
+    { favorites: favorites },
+    { new: true },
+    function(error) {
+      if(error) {
+        return next(error);
+      }
+    }
+  )
+}

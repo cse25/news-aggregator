@@ -15,4 +15,5 @@ module.exports = function(app) {
   //   response.send(['hello','world']);
   // });
   app.post('/favorites', Authentication.getFavorites);
+  app.post('/favorites/save', Authentication.saveFavorites);
 }

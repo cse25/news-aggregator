@@ -65,6 +65,13 @@ export function getFavorites(email) {
   }
 }
 
+export function saveFavorites(email, favorites) {
+  console.log('email and favorites inside setFavorites', email, favorites)
+  return function(dispatch) {
+    axios.post(`${ROOT_URL}/favorites/save`, {"email": email, "favorites": favorites})
+  }
+}
+
 export function authError(error) {
   return {
     type: AUTH_ERROR,
