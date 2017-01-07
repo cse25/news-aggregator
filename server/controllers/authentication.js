@@ -33,14 +33,15 @@ exports.signup = function(request, response, next) {
     // If a user with email does not exist, create and save user record
     const user = new User({
       email: email,
-      password: password
+      password: password,
+      favorites: favorites
     });
 
     user.save(function(error) {
       if (error) { return next(error); }
 
       // Respond to request indicating the user was created
-      response.json({ token: tokenForUser(user), email: user.email });
+      response.json({ token: tokenForUser(user), email: user.email, favorites: user.favorites });
     });
   });
 }
