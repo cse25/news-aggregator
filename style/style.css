@@ -52,6 +52,11 @@
   float: right;
 }
 
+.email-header {
+  float: right !important;
+  margin-right: 30px !important;
+}
+
 .panel-body {
   padding: 0px !important;
 }
