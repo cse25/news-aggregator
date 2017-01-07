@@ -12,7 +12,7 @@ class Header extends Component {
         </li>,
         <li className="nav-item" key={1}>
           <Link to="/favorites">Edit Favorites</Link>
-        </li>
+        </li>        
       ];
     } else {
       return [
@@ -28,11 +28,14 @@ class Header extends Component {
 
   render() {
     return (
-      <Navbar>
+      <Navbar inverse>
         <Link to="/" className="navbar-brand">Sad Story Inc.</Link>
         <ul className="nav navbar-nav">
           {this.renderLinks()}
         </ul>
+        <Navbar.Text className="nav-item email-header">
+          {localStorage.email}
+        </Navbar.Text>
       </Navbar>
     );
   }
