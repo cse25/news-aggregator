@@ -10,8 +10,8 @@ function tokenForUser(user) {
 
 exports.signin = function(request, response, next) {
   // User is authenticated; give user a token
-  console.log(request.user);
-  response.send({ token: tokenForUser(request.user), email: request.user.email });
+  console.log('REQUEST.USER', request.user);
+  response.send({ token: tokenForUser(request.user), email: request.user.email, favorites: request.user.favorites });
 }
 
 exports.signup = function(request, response, next) {
