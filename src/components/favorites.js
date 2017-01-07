@@ -2,9 +2,13 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { ListGroup, ListGroupItem, Button, Glyphicon } from 'react-bootstrap';
-import { toggleFavorite } from '../actions/index';
+import { toggleFavorite, getFavorites, saveFavorites } from '../actions/index';
 
 class Favorites extends Component {
+  componentWillMount() {
+    this.props.getFavorites(localStorage.email);
+  }
+
   renderList() {
     return this.props.favorites.map((favorite) => {
       if (!favorite.favorite) {
@@ -57,7 +61,7 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ toggleFavorite }, dispatch)
+  return bindActionCreators({ toggleFavorite, getFavorites, saveFavorites }, dispatch)
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Favorites);

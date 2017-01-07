@@ -1,4 +1,5 @@
 import { TOGGLE_FAVORITE } from '../actions/types';
+import { TOGGLE_FAVORITE, GET_FAVORITES } from '../actions/types';
 
 const initialState = [
     { id: 'abc-news-au', name: 'ABC News (AU)', favorite: false },
@@ -65,6 +66,9 @@ const initialState = [
 
 export default function(state = initialState, action) {
   switch(action.type) {
+    case GET_FAVORITES:
+      console.log('get favorites action.payload', action.payload)
+      return action.payload;
     case TOGGLE_FAVORITE:
       const newState = state.map((obj) => {
         if (obj.id === action.payload.id && obj.favorite === false) {

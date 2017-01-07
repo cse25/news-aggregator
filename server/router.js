@@ -14,4 +14,5 @@ module.exports = function(app) {
   // app.get('/', function(request, response, next) {
   //   response.send(['hello','world']);
   // });
+  app.post('/favorites', Authentication.getFavorites);
 }

@@ -6,3 +6,4 @@ export const FETCH_ARTICLES = 'fetch_articles';
 export const SELECT_ARTICLE = 'select_article';
 export const TOGGLE_FAVORITE = 'toggle_favorite';
 export const SAVE_EMAIL = 'save_email';
+export const GET_FAVORITES = 'get_favorites';

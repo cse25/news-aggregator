@@ -45,3 +45,14 @@ exports.signup = function(request, response, next) {
     });
   });
 }
+
+exports.getFavorites = function(request, response, next) {
+  const email = request.body.email;
+  User.findOne({ email: email }, 'favorites', function(error, existingUser) {
+    if (error) { 
+      return next(error); 
+    }
+    response.json({ favorites: existingUser.favorites })
+  })
+}
+

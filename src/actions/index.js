@@ -9,6 +9,7 @@ import { FETCH_ARTICLES } from './types';
 import { SELECT_ARTICLE } from './types';
 import { TOGGLE_FAVORITE } from './types';
 import { SAVE_EMAIL } from './types';
+import { GET_FAVORITES } from './types';
 
 const ROOT_URL = 'http://localhost:3090';
 
@@ -24,6 +25,7 @@ export function signinUser({ email, password }) {
         localStorage.setItem('token', response.data.token);
         // console.log('response.data.email', response.data.email);
         dispatch({ type: SAVE_EMAIL, payload: response.data.email });
+        dispatch({ type: GET_FAVORITES, payload: response.data.favorites });
         // -Redirect to route '/feature'
         browserHistory.push('/feature');
       })
@@ -42,12 +44,24 @@ export function signupUser({ email, password }) {
         dispatch({ type: AUTH_USER });
         localStorage.setItem('token', response.data.token);
         dispatch({ type: SAVE_EMAIL, payload: response.data.email});
+        // dispatch({ type: GET_FAVORITES, payload: response.data.favorites});
         browserHistory.push('/feature');
       })
       .catch(() => {
         dispatch(authError('Email already in use'));
       });
       // .catch(response => dispatch(authError(response.data.error)));
+  }
+}
+
+export function getFavorites(email) {
+  console.log('email argument inside getFavorites', email)
+  return function(dispatch) {
+    axios.post(`${ROOT_URL}/favorites`, {"email": email})
+      .then(response => {
+        console.log(response.data.favorites);
+        dispatch({ type: GET_FAVORITES, payload: response.data.favorites })
+      })
   }
 }
 
