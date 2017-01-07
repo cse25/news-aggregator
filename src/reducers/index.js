@@ -14,7 +14,7 @@ import gamingSourcesReducer from './sources_gaming_reducer';
 import musicSourcesReducer from './sources_music_reducer';
 import favorites from './sources_favorites_reducer';
 
-const rootReducer = combineReducers({
+const appReducer = combineReducers({
   form: form,
   auth: authReducer,
   articles: articlesReducer,
@@ -30,5 +30,15 @@ const rootReducer = combineReducers({
   gamingSources: gamingSourcesReducer,
   musicSources: musicSourcesReducer
 });
+
+const rootReducer = (state, action) => {
+  if (action.type === 'unauth_user') {
+    console.log('state 1', state)
+    state = undefined
+    console.log('state 2', state)
+  }
+
+  return appReducer(state, action)
+}
 
 export default rootReducer;
