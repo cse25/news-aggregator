@@ -33,9 +33,9 @@ class Header extends Component {
         <ul className="nav navbar-nav">
           {this.renderLinks()}
         </ul>
-        <Navbar.Text className="nav-item email-header">
+        {/*<Navbar.Text className="nav-item email-header">
           {localStorage.email}
-        </Navbar.Text>
+        </Navbar.Text>*/}
       </Navbar>
     );
   }
