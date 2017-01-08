@@ -44,7 +44,7 @@ class Favorites extends Component {
         </ul>
         <Button
           onClick={() => this.props.saveFavorites(localStorage.email, this.props.favorites)}
-          bsStyle="primary"
+          bsStyle="secondary"
           className="float-right">
           Save
         </Button>
