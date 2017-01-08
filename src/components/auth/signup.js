@@ -49,7 +49,7 @@ class Signup extends Component {
   render() {
     const { handleSubmit } = this.props
     return (
-      <form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
+      <form className="form-margin-top" onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
         <Field name="email" type="text" component={renderField} label="Email"/>
         <Field name="password" type="password" component={renderField} label="Password"/>
         <Field name="passwordConfirm" type="password" component={renderField} label="Confirm Password"/>
