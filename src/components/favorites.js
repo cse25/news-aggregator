@@ -28,7 +28,7 @@ class Favorites extends Component {
             className="favorite-item">
             {favorite.name}
             <span className="float-right">
-              <Glyphicon glyph="star" />
+              <Glyphicon glyph="ok" />
             </span>
           </li>
         )
