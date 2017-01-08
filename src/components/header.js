@@ -29,7 +29,7 @@ class Header extends Component {
   render() {
     return (
       <Navbar inverse>
-        <Link to="/" className="navbar-brand">Sad Story Inc.</Link>
+        <Link to="/dashboard" className="navbar-brand">News Aggregator</Link>
         <ul className="nav navbar-nav">
           {this.renderLinks()}
         </ul>

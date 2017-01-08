@@ -43,8 +43,7 @@ class NewsSourceList extends Component {
           <ListGroup>
             <div className="add-favorites-message">
               <Link to="/favorites">
-                You do not currently have any favorites.
-                Click here to add some.
+                Start adding some favorites!
               </Link>
             </div>
           </ListGroup>

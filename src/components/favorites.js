@@ -39,7 +39,6 @@ class Favorites extends Component {
   render() {
     return (
       <div>
-        <b>Edit Favorites</b>
         <ul className="favorites-list">
           {this.renderList()}
         </ul>
