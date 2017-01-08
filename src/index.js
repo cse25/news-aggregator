@@ -33,7 +33,7 @@ ReactDOM.render(
         <Route path="signin" component={Signin} />
         <Route path="signout" component={Signout} />
         <Route path="signup" component={Signup} />
-        <Route path="feature" component={RequireAuth(NewsDashboard)} />
+        <Route path="dashboard" component={RequireAuth(NewsDashboard)} />
         <Route path="favorites" component={RequireAuth(Favorites)} />
       </Route>
     </Router>

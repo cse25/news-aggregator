@@ -26,8 +26,8 @@ export function signinUser({ email, password }) {
         // console.log('response.data.email', response.data.email);
         dispatch({ type: SAVE_EMAIL, payload: response.data.email });
         dispatch({ type: GET_FAVORITES, payload: response.data.favorites });
-        // -Redirect to route '/feature'
-        browserHistory.push('/feature');
+        // -Redirect to route '/dashboard'
+        browserHistory.push('/dashboard');
       })
       .catch(() => {
         // If request is bad:
@@ -45,7 +45,7 @@ export function signupUser({ email, password }) {
         localStorage.setItem('token', response.data.token);
         dispatch({ type: SAVE_EMAIL, payload: response.data.email});      
         // dispatch({ type: GET_FAVORITES, payload: response.data.favorites});
-        browserHistory.push('/feature');
+        browserHistory.push('/dashboard');
       })
       .catch(() => {
         dispatch(authError('Email already in use'));
