@@ -110,6 +110,11 @@ ul {
   list-style-type: none;
   padding: 0px;
 }
+
+.form-control {
+  width: 20% !important;
+}
+
 .form-margin-top {
   margin-top: 10px;
 }
