@@ -32,7 +32,7 @@ class NewsSourceList extends Component {
       return (
         <Panel
           collapsible header={
-          <div>
+          <div className="pointer">
             Favorites
             <span className="float-right">
               <Badge>
@@ -55,7 +55,7 @@ class NewsSourceList extends Component {
     return (
       <Panel
         collapsible header={
-        <div>
+        <div className="pointer">
           Favorites
           <span className="float-right">
             <Badge>
@@ -87,7 +87,7 @@ class NewsSourceList extends Component {
         <Panel 
           key={category.header}
           collapsible header={
-          <div>
+          <div className="pointer">
             {category.header}
             <span className="float-right">
               <Badge>

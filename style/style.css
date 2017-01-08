@@ -16,6 +16,10 @@
   border-left: 0px !important;
 }
 
+.pointer {
+  cursor: pointer;
+}
+
 .news-source-list-item:hover {
   background-color: #eceeef;
 }
