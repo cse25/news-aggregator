@@ -89,6 +89,7 @@ button.list-group-item:last-child {
   -moz-column-width: 13em;
   -webkit-column-width: 13em;
   column-width: 13em;
+  margin-top: 12px;
 }
 
 .list-group {
