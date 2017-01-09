@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { browserHistory } from 'react-router';
 import { ListGroup, ListGroupItem, Button, Glyphicon } from 'react-bootstrap';
 import { toggleFavorite, getFavorites, saveFavorites } from '../actions/index';
 
@@ -14,7 +15,11 @@ class Favorites extends Component {
       if (!favorite.favorite) {
         return (
           <li
-            onClick={() => this.props.toggleFavorite(favorite)}
+            onClick={() => {
+              this.props.toggleFavorite(favorite)
+              this.props.saveFavorites(localStorage.email, this.props.favorites)
+              }
+            }
             key={favorite.name}
             className="favorite-item">
             {favorite.name}
@@ -23,7 +28,11 @@ class Favorites extends Component {
       } else {
         return (
           <li
-            onClick={() => this.props.toggleFavorite(favorite)}
+            onClick={() => {
+              this.props.toggleFavorite(favorite)
+              this.props.saveFavorites(localStorage.email, this.props.favorites)
+              }
+            }
             key={favorite.name}
             className="favorite-item">
             {favorite.name}
