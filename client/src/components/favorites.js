@@ -51,12 +51,13 @@ class Favorites extends Component {
         <ul className="favorites-list">
           {this.renderList()}
         </ul>
-        <Button
-          onClick={() => this.props.saveFavorites(localStorage.email, this.props.favorites)}
-          bsStyle="secondary"
-          className="float-right">
-          Save
-        </Button>
+        <div>
+          <button
+            onClick={() => browserHistory.push('/dashboard')}
+            className="float-right btn btn-secondary">
+            Save
+          </button>
+        </div>
       </div>
     )
   }
