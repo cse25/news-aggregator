@@ -54,6 +54,15 @@ export function signupUser({ email, password }) {
   }
 }
 
+export function signoutUser() {
+  localStorage.removeItem('token');
+  localStorage.removeItem('email');
+  // localStorage.removeItem('favorites');
+  return {
+    type: UNAUTH_USER,
+  }
+}
+
 export function getFavorites(email) {
   console.log('email argument inside getFavorites', email)
   return function(dispatch) {
@@ -69,7 +78,16 @@ export function saveFavorites(email, favorites) {
   console.log('email and favorites inside setFavorites', email, favorites)
   return function(dispatch) {
     axios.post(`${ROOT_URL}/favorites/save`, {"email": email, "favorites": favorites})
-    browserHistory.push('/dashboard');
+      .then(response => {
+        console.log(response.data)
+      })
+  }
+}
+
+export function toggleFavorite(favorite) {
+  return {
+    type: TOGGLE_FAVORITE,
+    payload: favorite
   }
 }
 
@@ -78,14 +96,6 @@ export function authError(error) {
     type: AUTH_ERROR,
     payload: error
   };
-}
-
-export function signoutUser() {
-  localStorage.removeItem('token');
-  localStorage.clear
-  return {
-    type: UNAUTH_USER,
-  }
 }
 
 export function fetchMessage() {
@@ -112,12 +122,5 @@ export function fetchArticles(source) {
           payload: response.data.articles
         })
       })
-  }
-}
-
-export function toggleFavorite(favorite) {
-  return {
-    type: TOGGLE_FAVORITE,
-    payload: favorite
   }
 }
