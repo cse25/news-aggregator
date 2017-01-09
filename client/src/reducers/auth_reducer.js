@@ -13,6 +13,5 @@ export default function(state = {}, action) {
     case SAVE_EMAIL:
       localStorage.setItem('email', action.payload);
   }
-
   return state;
 }
