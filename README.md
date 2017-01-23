@@ -2,7 +2,7 @@
 
 A news article viewer using React/Redux/ES6/Node/Express/MongoDB powered by newsapi.org. Users can access their news dashboard without signing in or signing up. Alternativey, they may make an account to save their favorite news sources to their dashboard for a faster reference.
 
->![News Dashboard](/img/dashboard.png)
+![News Dashboard](/img/dashboard.png)
 
 ## Try it out
 
