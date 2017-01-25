@@ -11,7 +11,7 @@ https://cse25-news.herokuapp.com/
 ## Built With
 
 * [Axios](https://github.com/mzabriskie/axios) - HTTP AJAX Client
-* [Babel](https://github.com/babel/babel) - Transpilation From ES6
+* [Babel](https://github.com/babel/babel) - Transpilation From ES2015
 * [Bcrypt-nodejs](https://www.npmjs.com/package/bcrypt-nodejs) - Node Password/Data Hashing
 * [Bootstrap](http://getbootstrap.com/css/) - Bootstrap CSS v4 Library
 * [Express](https://github.com/expressjs/express) - Node Server Framework
