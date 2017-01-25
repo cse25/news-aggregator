@@ -21,7 +21,7 @@ https://cse25-news.herokuapp.com/
 * [Mongoose](http://mongoosejs.com/) - MongoDB Tooling
 * [Passport](http://passportjs.org/) - Node Authentication
 * [React](https://github.com/facebook/react) - View/UI
-* [React-Bootstrap](https://react-bootstrap.github.io/) - Bootstrap, rebuilt for React
+* [React-bootstrap](https://react-bootstrap.github.io/) - Bootstrap, rebuilt for React
 * [React-router](https://github.com/ReactTraining/react-router) - Client Routing
 * [Redux](https://github.com/reactjs/redux) - State Management
 * [Redux-form](https://github.com/erikras/redux-form) - Form Validation State With Redux
